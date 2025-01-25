@@ -21,7 +21,7 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += velocity;
+        transform.position += velocity * Time.deltaTime;
 
         if(transform.position.y > 5.0f)
         {
@@ -31,7 +31,7 @@ public class Bubble : MonoBehaviour
 
         if(velocity.x != 0)
         {
-            velocity.x -= deceleration;
+            velocity.x -= deceleration * Time.deltaTime;
             if (initialDirection > 0)
             {
                 if (velocity.x <= 0)
@@ -52,12 +52,12 @@ public class Bubble : MonoBehaviour
     void Setup()
     {
         curHP = 2;
-        velocity.x = Random.Range(-0.1f, 0.1f);
+        velocity.x = Random.Range(-10f, 10f);
         initialDirection = velocity.x > 0 ? 1 : -1;
 
-        velocity.y = Random.Range(0.01f, 0.02f);
+        velocity.y = Random.Range(5.0f, 10.0f);
 
-        deceleration = Random.Range(0.0005f, 0.0015f) * initialDirection;
+        deceleration = Random.Range(0.05f, 0.15f) * initialDirection;
     }
 
     public void ReEnable(Vector3 position) 

@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5858386005798023868, guid: 58d144fa09b8dba4f8ee837fb3538f3b, type: 3}
+      propertyPath: Spawner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858386005798023868, guid: 58d144fa09b8dba4f8ee837fb3538f3b, type: 3}
+      propertyPath: OscillationAmplitude
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -552,7 +560,7 @@ Transform:
   m_GameObject: {fileID: 740073672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.21956088, z: 2}
+  m_LocalPosition: {x: 0.1, y: 0.21956088, z: 3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -637,7 +645,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1132753931
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &981732662
