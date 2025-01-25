@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class AudioSystem : MonoBehaviour
 {
@@ -7,14 +8,20 @@ public class AudioSystem : MonoBehaviour
     const int ClipCount = 10;
 
     [SerializeField] AudioClip[] pops = new AudioClip[ClipCount];
+    [SerializeField] AudioClip bgmClip;
 
     List<AudioSource> popSources = new List<AudioSource>();
     List<int> freeSources = new List<int>();
     List<int> playingList = new List<int>();
 
-    AudioSource BgmSource;
+    GameObject bgmObject;
+    AudioSource bgmSource;
 
     [SerializeField] GameObject audioPlayerPrefab;
+    [SerializeField] bool playBgm = true;
+
+    [SerializeField] AudioMixer masterMix;
+    AudioMixerGroup mixerGroup;
 
     List<GameObject> popSourceObjects = new List<GameObject>();
 
@@ -22,15 +29,32 @@ public class AudioSystem : MonoBehaviour
     {
         gStaticInstance = this;
     }
-
     void Start()
     {
+        AudioMixerGroup[] groups = masterMix.FindMatchingGroups("Master");
+        mixerGroup = groups[0];
+
+        bgmObject = Instantiate(audioPlayerPrefab);
+        bgmObject.transform.SetParent(this.gameObject.transform);
+        bgmSource = bgmObject.GetComponent<AudioSource>();
+        bgmSource.outputAudioMixerGroup = mixerGroup;
+
         for(int i = 0; i < 20; i += 1)
         {
-            popSourceObjects.Add(Instantiate(audioPlayerPrefab));
+            GameObject newPopObject = Instantiate(audioPlayerPrefab);
+            newPopObject.transform.SetParent(this.gameObject.transform);
+            popSourceObjects.Add(newPopObject);
             freeSources.Add(i);
             AudioSource source = popSourceObjects[i].GetComponent<AudioSource>();
             popSources.Add(source);
+            source.outputAudioMixerGroup = mixerGroup;
+        }
+
+        bgmSource.loop = true;
+        bgmSource.clip = bgmClip;
+        if(playBgm)
+        {
+            bgmSource.Play();
         }
     }
 
