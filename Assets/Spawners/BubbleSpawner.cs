@@ -4,7 +4,7 @@ public class BubbleSpawner : MonoBehaviour
 {
     public GameObject Spawner;
 
-    public float OscillationAmplitude = 200.0f;
+    public float OscillationAmplitude = 10.0f;
     public float OscillationSpeed = 20.0f;
 
     private Vector2 StartPosition = Vector2.zero;
