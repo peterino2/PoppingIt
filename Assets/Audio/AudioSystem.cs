@@ -18,10 +18,13 @@ public class AudioSystem : MonoBehaviour
 
     List<GameObject> popSourceObjects = new List<GameObject>();
 
-    void Start()
+    private void Awake()
     {
         gStaticInstance = this;
+    }
 
+    void Start()
+    {
         for(int i = 0; i < 20; i += 1)
         {
             popSourceObjects.Add(Instantiate(audioPlayerPrefab));
