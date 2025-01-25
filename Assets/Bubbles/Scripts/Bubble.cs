@@ -60,9 +60,9 @@ public class Bubble : MonoBehaviour
         deceleration = Random.Range(0.0005f, 0.0015f) * initialDirection;
     }
 
-    public void ReEnable() 
+    public void ReEnable(Vector3 position) 
     {
-        transform.position = new Vector3(0, -5, 0);
+        transform.position = position;
         Setup();
     }
 
