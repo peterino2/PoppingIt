@@ -287,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1ddf1e2ea0db547a5272766ea86ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubble1: {fileID: 960991715670354285, guid: de54f06b4e6bfb34fa53a468b7034ddd, type: 3}
+  _interval: 3
 --- !u!1 &739045135
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0c6fef4e1ff1b4e9c4607e77b7cf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hits: 0
+  curHP: 0
   score: 0
 --- !u!1 &1237551399
 GameObject:

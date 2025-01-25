@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        GameManager.Instance.RemoveBubble(rayHit.collider.gameObject);
+        GameManager.Instance.DamageBubble(rayHit.collider.gameObject);
         
     }
 }
