@@ -31,34 +31,24 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
         _instance = this;
-        audio = AudioSystem.get();
-        ScoreManager = ScoreManager.get();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _time = 0f;
         audio = AudioSystem.get();
+        ScoreManager = ScoreManager.get();
         ScoreManager.ResetScore();
-        bubbles = new List<GameObject>();
-        var dist = (transform.position - Camera.main.transform.position).z;
-        var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
-        var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
-        var topBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).y;
-        var botBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, dist)).y;
-
-        for (float i = leftBorder; i <  rightBorder; i+=2)
+        bubbles = new List<GameObject>(1000);
+        for (int i = 0; i < 1000; i++)
         {
-            for (float j = topBorder; j < botBorder; j+=2)
-            {
-                float posX = Mathf.Clamp(i, leftBorder, rightBorder);
-                float posY = Mathf.Clamp(j, topBorder, botBorder);
-
-                GameObject go = Instantiate(bubble1, new Vector3(posX, posY, 0), Quaternion.identity);
-                go.transform.localScale = Vector3.one;
-                bubbles.Add(go);
-            }
+            bubbles.Add(Instantiate(bubble1));
+            bubbles[i].GetComponent<Renderer>().enabled = false;
         }
     }
 
@@ -81,6 +71,16 @@ public class GameManager : MonoBehaviour
     {
         bool spawned = false;
         int i = 0;
+
+        if(bubbles.Count == 0)
+        {
+            for (int j = 0; j < 1000; j++)
+            {
+                bubbles.Add(Instantiate(bubble1));
+                bubbles[i].GetComponent<Renderer>().enabled = false;
+            }
+        }
+
         while (!spawned && i < bubbles.Count)
         {
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {

@@ -318,7 +318,6 @@ GameObject:
   m_Component:
   - component: {fileID: 617484662}
   - component: {fileID: 617484663}
-  - component: {fileID: 617484664}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -356,21 +355,8 @@ MonoBehaviour:
   ScoreManager: {fileID: 1354455043}
   bubble1: {fileID: 960991715670354285, guid: de54f06b4e6bfb34fa53a468b7034ddd, type: 3}
   spawner: {fileID: 1418572850}
-  audio: {fileID: 0}
+  audio: {fileID: 909009004}
   _interval: 0.1
---- !u!114 &617484664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617484661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c527b2138e0ed464faf828e320b87619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 2020576474}
 --- !u!1 &739045135
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +625,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
+--- !u!114 &909009004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
+  m_PrefabInstance: {fileID: 800837553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49652853020b4ea7b19696ff5c5b6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981732658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +999,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354455041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c527b2138e0ed464faf828e320b87619, type: 3}
+  m_Script: {fileID: 11500000, guid: 10136330538b91444bcf6568c3bf97f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2020576474}
