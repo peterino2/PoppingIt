@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject bubble1;
 
+    public BubbleSpawner spawner;
+
     [SerializeField] float _interval = 3.0f;
     float _time;
 
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
                 bubbles[i].gameObject.GetComponent<Renderer>().enabled = true;
                 spawned = true;
+                bubbles[i].GetComponent<Bubble>().ReEnable(spawner.GetSpawnerLocation());
                 Debug.Log("SPawned");
             }
             i++;
