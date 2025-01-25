@@ -52,10 +52,10 @@ public class Bubble : MonoBehaviour
     void Setup()
     {
         curHP = 1;
-        velocity.x = Random.Range(-10f, 10f);
+        velocity.x = Random.Range(-5f, 5f);
         initialDirection = velocity.x > 0 ? 1 : -1;
 
-        velocity.y = Random.Range(5.0f, 10.0f);
+        velocity.y = Random.Range(1.0f, 5.0f);
 
         deceleration = Random.Range(0.05f, 0.15f) * initialDirection;
     }
