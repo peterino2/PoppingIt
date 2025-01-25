@@ -29,8 +29,6 @@ public class AudioSystem : MonoBehaviour
     {
         gStaticInstance = this;
     }
-
-
     void Start()
     {
         AudioMixerGroup[] groups = masterMix.FindMatchingGroups("Master");
