@@ -318,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617484662}
   - component: {fileID: 617484663}
+  - component: {fileID: 617484664}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -357,6 +358,19 @@ MonoBehaviour:
   spawner: {fileID: 1418572850}
   audio: {fileID: 0}
   _interval: 0.1
+--- !u!114 &617484664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617484661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c527b2138e0ed464faf828e320b87619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 2020576474}
 --- !u!1 &739045135
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 740073672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.21956088, z: 3}
+  m_LocalPosition: {x: -0.27, y: 0.21956088, z: 3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
