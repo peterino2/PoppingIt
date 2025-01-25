@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     List<GameObject> bubbles;
+
     public GameObject bubble1;
 
     [SerializeField] float _interval = 3.0f;
