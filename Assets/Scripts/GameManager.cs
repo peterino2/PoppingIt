@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
                 bubbles[i].gameObject.GetComponent<Renderer>().enabled = true;
                 spawned = true;
+                bubbles[i].GetComponent<Bubble>().ReEnable();
                 Debug.Log("SPawned");
             }
             i++;

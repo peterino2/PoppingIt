@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble1: {fileID: 960991715670354285, guid: de54f06b4e6bfb34fa53a468b7034ddd, type: 3}
-  _interval: 3
+  _interval: 0.1
 --- !u!1 &739045135
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curHP: 0
   score: 0
+  deceleration: 0
 --- !u!1 &1237551399
 GameObject:
   m_ObjectHideFlags: 0
