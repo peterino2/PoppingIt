@@ -56,7 +56,7 @@ public class AudioSystem : MonoBehaviour
         }
     }
 
-    public AudioSystem get()
+    public static AudioSystem get()
     {
         return gStaticInstance;
     }
