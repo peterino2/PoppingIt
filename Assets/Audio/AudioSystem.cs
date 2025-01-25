@@ -31,7 +31,7 @@ public class AudioSystem : MonoBehaviour
         }
     }
 
-    public AudioSystem get()
+    public static AudioSystem get()
     {
         return gStaticInstance;
     }
@@ -46,7 +46,7 @@ public class AudioSystem : MonoBehaviour
 
         int index = freeSources[freeSources.Count - 1];
         freeSources.RemoveAt(freeSources.Count - 1);
-        AudioClip selectedPop = pops[Random.Range(0, ClipCount)];
+        AudioClip selectedPop = pops[Random.Range(0, 2)];
         popSources[index].PlayOneShot(selectedPop);
         playingList.Add(index);
     }

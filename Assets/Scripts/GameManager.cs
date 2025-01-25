@@ -2,16 +2,20 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+
+    public ScoreManager ScoreManager;
 
     List<GameObject> bubbles;
 
     public GameObject bubble1;
 
     public BubbleSpawner spawner;
+    public AudioSystem audio;
 
     [SerializeField] float _interval = 3.0f;
     float _time;
@@ -28,11 +32,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        audio = AudioSystem.get();
+        ScoreManager = ScoreManager.get();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _time = 0f;
+        audio = AudioSystem.get();
+        ScoreManager.ResetScore();
         bubbles = new List<GameObject>();
         var dist = (transform.position - Camera.main.transform.position).z;
         var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
@@ -93,7 +101,11 @@ public class GameManager : MonoBehaviour
         {
             bub.takeDamage(1);
             if (bub.curHP <= 0)
+            {
+                ScoreManager.IncrementScore();
+                audio.playPop();
                 RemoveBubble(bubble);
+            }
         }
         else
         {
