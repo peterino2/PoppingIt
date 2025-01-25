@@ -54,13 +54,23 @@ public class AudioSystem : MonoBehaviour
         bgmSource.clip = bgmClip;
         if(playBgm)
         {
-            bgmSource.Play();
+            startBgm();
         }
     }
 
     public static AudioSystem get()
     {
         return gStaticInstance;
+    }
+
+    public void stopBgm()
+    {
+        bgmSource.Pause();
+    }
+
+    public void startBgm()
+    {
+        bgmSource.Play();
     }
 
     public void playPop()
