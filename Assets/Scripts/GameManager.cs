@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     List<GameObject> bubbles;
+
     public GameObject bubble1;
 
     public BubbleSpawner spawner;
