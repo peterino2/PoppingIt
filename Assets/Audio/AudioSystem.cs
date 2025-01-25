@@ -25,10 +25,14 @@ public class AudioSystem : MonoBehaviour
 
     List<GameObject> popSourceObjects = new List<GameObject>();
 
-    void Start()
+    private void Awake()
     {
         gStaticInstance = this;
+    }
 
+
+    void Start()
+    {
         AudioMixerGroup[] groups = masterMix.FindMatchingGroups("Master");
         mixerGroup = groups[0];
 
