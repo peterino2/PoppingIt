@@ -4,6 +4,7 @@ using UnityEngine.LowLevelPhysics;
 public class BoomboxAnim : MonoBehaviour
 {
     RectTransform rtrans;
+    [SerializeField] float intensity = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -20,7 +21,6 @@ public class BoomboxAnim : MonoBehaviour
     {
         float playtime = AudioSystem.get().bgmPlayTime;
         float skew = AudioSystem.get().skewCurve.Evaluate(playtime);
-        Debug.Log($"{skew} {playtime}");
-        rtrans.rotation = Quaternion.AngleAxis(skew * 20, Vector3.forward);
+        rtrans.rotation = Quaternion.AngleAxis(skew * intensity, Vector3.forward);
     }
 }
