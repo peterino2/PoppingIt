@@ -6,10 +6,20 @@ public class Bubble : MonoBehaviour
     public double score;
     public Animator animator;
 
+    public SpriteRenderer spriteRend;
     protected Vector3 velocity = Vector3.zero;
 
     [SerializeField]
     protected float deceleration;
+
+
+    public Color tint1;
+    public Color tint2;
+    public Color tint3;
+
+    public Sprite texture1;
+    public Sprite texture2;
+    public Sprite texture3;
 
     float initialDirection;
 
@@ -60,6 +70,19 @@ public class Bubble : MonoBehaviour
         velocity.y = Random.Range(1.0f, 5.0f);
 
         deceleration = Random.Range(0.05f, 0.15f) * initialDirection;
+
+        if(curHP == 1)
+        {
+            spriteRend.color = tint1;
+        }
+        else if(curHP == 2)
+        {
+            spriteRend.color = tint2;
+        }
+        else if(curHP > 2)
+        {
+            spriteRend.color = tint3;
+        }
     }
 
     public void ReEnable(Vector3 position) 
@@ -76,11 +99,23 @@ public class Bubble : MonoBehaviour
         if (curHP > 0) {
             //animator.ResetTrigger("Damaged");
             animator.SetTrigger("Damaged");
+            if(curHP == 1)
+            {
+                spriteRend.color = tint1;
+            }
+            else if(curHP == 2)
+            {
+                spriteRend.color = tint2;
+            }
+            else if(curHP > 2)
+            {
+                spriteRend.color = tint3;
+            }
         }
     }
 
     public void PendingRemoval() {
-        Debug.Log("Pend Removal");
+        // Debug.Log("Pend Removal");
         GameManager.Instance.addToRemoveList(gameObject);
     }
 

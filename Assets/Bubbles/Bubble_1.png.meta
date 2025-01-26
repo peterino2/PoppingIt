@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d1c074bb2616e9d4b87f3a17b094a336
+guid: 3dc035265e0f649f798689f111fe1d1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3469067119388258510
-    second: ChainLightning_0
+      213: -6257198364413198543
+    second: Bubble_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChainLightning_0
+      name: Bubble_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 175
-        height: 264
+        width: 159
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 23f00e6b5d56bdfc0800000000000000
-      internalID: -3469067119388258510
+      spriteID: 13ffef75d37f929a0800000000000000
+      internalID: -6257198364413198543
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChainLightning_0: -3469067119388258510
+      Bubble_1_0: -6257198364413198543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

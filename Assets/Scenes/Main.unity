@@ -203,6 +203,9 @@ GameObject:
   - component: {fileID: 343847718}
   - component: {fileID: 343847721}
   - component: {fileID: 343847722}
+  - component: {fileID: 343847725}
+  - component: {fileID: 343847724}
+  - component: {fileID: 343847726}
   m_Layer: 0
   m_Name: UpgradeList
   m_TagString: Untagged
@@ -309,7 +312,7 @@ MonoBehaviour:
   upgradeName: Burning Finger
   description: Hold to deal pop rapidly
   cost: 100
-  unlockThreshold: 0
+  unlockThreshold: 70
 --- !u!114 &343847718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +399,58 @@ MonoBehaviour:
   cost: 666666
   unlockThreshold: 0
   ggColor: {r: 1, g: 0, b: 0, a: 1}
+  Satan: {fileID: 1154568759}
+--- !u!114 &343847724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4496a864bcb664ea99b2b9ed20fc3aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 06f4736ba37504b329f22aeb8d24a841, type: 3}
+  upgradeName: Mega Bubbles
+  description: Sronger! Even more points
+  cost: 3000
+  unlockThreshold: 3000
+--- !u!114 &343847725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37103e79ec4674abb8e13f21f88551cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 3dc035265e0f649f798689f111fe1d1e, type: 3}
+  upgradeName: Super Bubbles
+  description: Stronger, more points
+  cost: 2500
+  unlockThreshold: 2000
+--- !u!114 &343847726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d8bf9b7bdd44231ab36f53207b4b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  upgradeName: Jukebox
+  description: Play some beats, get pops passively
+  cost: 10
+  unlockThreshold: 5
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +769,7 @@ Transform:
   - {fileID: 740073674}
   - {fileID: 2060651343}
   - {fileID: 544914834}
+  - {fileID: 1154568760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &589530839
@@ -928,6 +984,10 @@ PrefabInstance:
     - target: {fileID: 125735227446389876, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: m_Name
       value: AudioSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
+      propertyPath: playBgm
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3073126647613942621, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1185,6 +1245,108 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1154568759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154568760}
+  - component: {fileID: 1154568762}
+  - component: {fileID: 1154568761}
+  m_Layer: 0
+  m_Name: Square (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1154568760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154568759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.74, y: 8.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566376089}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154568761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154568759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95de0292081ad43ed9a600df2d2898ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flip: 0
+  intensity: 1
+--- !u!212 &1154568762
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154568759}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1132753931
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -7508474526547097187, guid: 68bf1129a1e394e30b7db50d8b65770c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1237551399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2314,10 @@ PrefabInstance:
       propertyPath: cursorTexture
       value: 
       objectReference: {fileID: 2800000, guid: 81048ca663dbf1f4bad4d620633d3d84, type: 3}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: scorePerBubble
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: mouseBurnRadius
       value: 0.1

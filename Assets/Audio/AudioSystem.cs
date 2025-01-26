@@ -131,6 +131,8 @@ public class AudioSystem : MonoBehaviour
     private float currentUpdateTime = 0f;
     public float clipLoudness;
     private float[] clipSampleData = new float[sampleDataLength];
+
+    bool flag = false;
     void updateAmplitude()
     {
         currentUpdateTime += Time.deltaTime;
@@ -143,7 +145,19 @@ public class AudioSystem : MonoBehaviour
             {
                 clipLoudness += Mathf.Abs(sample);
             }
+
             clipLoudness /= sampleDataLength;
+            Debug.Log(clipLoudness);
+
+            if(clipLoudness > 0.15 && flag == false)
+            {
+                flag = true;
+                GameManager.Instance.ScoreManager.IncrementScore();
+            }
+            if(clipLoudness < 0.15)
+            {
+                flag = false;
+            }
         }
     }
 
