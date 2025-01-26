@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour
     public float maxComboTimer = 0.2f;
     public float curComboTimer = 0.0f;
 
+    [SerializeField]
+    GameObject upgradeManager;
+
     public static GameManager Instance
 
     {
@@ -117,6 +120,12 @@ public class GameManager : MonoBehaviour
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
 
         milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
+        currentMilestone = 0;
+    }
+
+    public void ShowShop()
+    {
+        upgradeManager.SetActive(true);
     }
 
     void CreateBubbles()
@@ -295,7 +304,7 @@ public class GameManager : MonoBehaviour
                 //StartCoroutine(AnimWait());
 
                 //BubblesToRemove.Add(bubble);
-
+                CheckMilestones();
             }
         }
         else
@@ -321,6 +330,18 @@ public class GameManager : MonoBehaviour
         comboText.text = "Chain: " + combo.ToString();
         comboText.fontSize = 18 + combo / comboMultStepSize;
         curComboTimer = maxComboTimer;
+    }
+
+    void CheckMilestones()
+    {
+        for(int i = currentMilestone; i < milestones.Count; i++)
+        {
+            if(milestones[i].Score <= ScoreManager.get().GetScore())
+            {
+                milestones[i].NotifyScoreTriggered();
+                currentMilestone = i;
+            }
+        }
     }
 
     public void addToRemoveList(GameObject bubble) { 

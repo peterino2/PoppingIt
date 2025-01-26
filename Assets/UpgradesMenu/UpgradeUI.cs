@@ -20,7 +20,7 @@ public class UpgradeUI : MonoBehaviour
         upgrade = newUpgrade;
         icon.sprite = upgrade.sprite;
 
-        header.text = upgrade.name + ": " + upgrade.cost.ToString();
+        header.text = upgrade.upgradeName + ": " + upgrade.cost.ToString();
         description.text = upgrade.description;
     }
 
