@@ -194,9 +194,9 @@ GameObject:
   m_Component:
   - component: {fileID: 141077665}
   - component: {fileID: 141077667}
-  - component: {fileID: 141077666}
+  - component: {fileID: 141077668}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Bonzi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,26 +211,12 @@ Transform:
   m_GameObject: {fileID: 141077664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53, y: 1.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.65, y: 3.35, z: 0}
+  m_LocalScale: {x: 0.33489943, y: 0.32995662, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 566376089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &141077666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141077664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95de0292081ad43ed9a600df2d2898ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flip: 0
-  intensity: 5
 --- !u!212 &141077667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -275,7 +261,7 @@ SpriteRenderer:
   m_SortingLayerID: 781170771
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 4cf029162c8437a4fbdb000d1053ef39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c601ca513aec472b84dc93a935ae9b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,6 +272,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &141077668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141077664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95de0292081ad43ed9a600df2d2898ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flip: 0
+  intensity: 1
 --- !u!1 &343847711
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +312,12 @@ GameObject:
   - component: {fileID: 343847728}
   - component: {fileID: 343847730}
   - component: {fileID: 343847729}
+  - component: {fileID: 343847731}
+  - component: {fileID: 343847734}
+  - component: {fileID: 343847733}
+  - component: {fileID: 343847732}
+  - component: {fileID: 343847735}
+  - component: {fileID: 343847736}
   m_Layer: 0
   m_Name: UpgradeList
   m_TagString: Untagged
@@ -485,8 +491,8 @@ MonoBehaviour:
   sprite: {fileID: 5556150181158091387, guid: 0a527f4faa8c09a4fb5d4e6c0c015c60, type: 3}
   upgradeName: Bubblinator
   description: So many bubbles...
-  cost: 4000
-  unlockThreshold: 3000
+  cost: 1000
+  unlockThreshold: 1500
 --- !u!114 &343847722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +563,7 @@ MonoBehaviour:
   description: Play some beats, get pops passively
   cost: 10
   unlockThreshold: 5
+  jukeboxObject: {fileID: 653427401}
 --- !u!114 &343847727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,10 +576,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fbf1e397ef544d08093bdaf0e98d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1c601ca513aec472b84dc93a935ae9b0, type: 3}
   upgradeName: Bonzi Buddy
   description: Your best friend, pops bubbles for you
-  cost: 1500
+  cost: 0
   unlockThreshold: 300
   bonziBuddyObject: {fileID: 141077664}
 --- !u!114 &343847728
@@ -626,6 +633,109 @@ MonoBehaviour:
   description: An upgrade to the bubblinator
   cost: 500
   unlockThreshold: 2000
+--- !u!114 &343847731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7b54089eb2844e9ab6eb903f67a117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6554736390298987251, guid: 8bcba6a4969e10241af02aa19a167228, type: 3}
+  upgradeName: Combo System
+  description: c-c-c-c-combo!
+  cost: 5000
+  unlockThreshold: 2000
+--- !u!114 &343847732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e692f2911e484429bb2eccd152c4c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5007744267778832331, guid: 7cd9165e3ff88e640af21fca43db9119, type: 3}
+  upgradeName: Harder Clicks
+  description: Click harder, pop super bubbles
+  cost: 5000
+  unlockThreshold: 2000
+--- !u!114 &343847733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064f710eac59940d690778e44a2662c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6554736390298987251, guid: 8bcba6a4969e10241af02aa19a167228, type: 3}
+  upgradeName: Combo Time
+  description: Increased duration for combos
+  cost: 5000
+  unlockThreshold: 2000
+--- !u!114 &343847734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddd2151489ac428d8708200e9e456df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6554736390298987251, guid: 8bcba6a4969e10241af02aa19a167228, type: 3}
+  upgradeName: Como Multiplier
+  description: Combos are stronger
+  cost: 5000
+  unlockThreshold: 2000
+--- !u!114 &343847735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fbf1e397ef544d08093bdaf0e98d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 1c601ca513aec472b84dc93a935ae9b0, type: 3}
+  upgradeName: Bonzi Speed
+  description: Pops Faster, Mines crypto
+  cost: 500
+  unlockThreshold: 3000
+  bonziBuddyObject: {fileID: 141077664}
+--- !u!114 &343847736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e692f2911e484429bb2eccd152c4c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -1421370093109563693, guid: 9e26d278c1e36f74c8741c954b88b974, type: 3}
+  upgradeName: Bubble Damage Super
+  description: Pop even mega bubbles!
+  cost: 10000
+  unlockThreshold: 3000
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1055,7 @@ Transform:
   - {fileID: 2060651343}
   - {fileID: 544914834}
   - {fileID: 141077665}
+  - {fileID: 653427402}
   - {fileID: 1154568760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1062,6 +1173,93 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 279830035636235078, guid: b9a4c4ea93e9b4404926ccc2de841f54, type: 3}
   m_PrefabInstance: {fileID: 589530839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &653427401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653427402}
+  - component: {fileID: 653427404}
+  m_Layer: 0
+  m_Name: Square (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &653427402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653427401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.55, y: 1.13, z: 0}
+  m_LocalScale: {x: 0.32683367, y: 0.3554198, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566376089}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &653427404
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653427401}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 781170771
+  m_SortingLayer: 1
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: f7bd0c3b8830b40008a44c4e8a7ff4de, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.01, y: 3.42}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &740073672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1510,6 @@ RectTransform:
   - {fileID: 2020576473}
   - {fileID: 589530840}
   - {fileID: 904046358}
-  - {fileID: 1264358381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1410,7 +1607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1dfb8f34d2a29409f9ae5ba064b5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 30
+  rotationSpeed: 150
   spriteRenderer: {fileID: 993082738}
 --- !u!4 &993082740
 Transform:
@@ -1518,7 +1715,7 @@ SpriteRenderer:
   m_SortingLayerID: -1132753931
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7508474526547097187, guid: 68bf1129a1e394e30b7db50d8b65770c, type: 3}
+  m_Sprite: {fileID: 1161201145128540330, guid: 1c601ca513aec472b84dc93a935ae9b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1526,7 +1723,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1237551399
@@ -1633,17 +1830,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264358380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 981732662}
+  m_Father: {fileID: 2020576473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328.6, y: 86.6}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 598.9899, y: -547.12}
+  m_SizeDelta: {x: 1302.18, y: 869.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264358382
 MonoBehaviour:
@@ -2225,7 +2422,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1264358381}
   m_Father: {fileID: 981732662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
