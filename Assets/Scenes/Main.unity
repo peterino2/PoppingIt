@@ -482,9 +482,9 @@ Transform:
   m_GameObject: {fileID: 740073672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1008, y: 5.0776, z: 3}
-  m_LocalScale: {x: 1.6806026, y: 1.623594, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -2.53, y: 7.58, z: 3}
+  m_LocalScale: {x: 3.3387969, y: 4.47, z: 1.9866666}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 566376089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1218,7 +1218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 99.99994, y: -25}
+  m_AnchoredPosition: {x: 195, y: -110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020576474
@@ -1250,8 +1250,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4291875071
+  m_fontColor: {r: 1, g: 0.8160377, b: 0.8160377, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1609,6 +1609,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 81048ca663dbf1f4bad4d620633d3d84, type: 3}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: popperChainChance
       value: 1
       objectReference: {fileID: 0}
@@ -1628,6 +1632,10 @@ PrefabInstance:
       propertyPath: popperChainInterval
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: clickedCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 5b220a141e0d51b459c232c6e8eafa42, type: 3}
     - target: {fileID: 8118574750407963760, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

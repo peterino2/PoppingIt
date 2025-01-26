@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 81048ca663dbf1f4bad4d620633d3d84
+guid: e54fa2ba3add8f640939e574b2dd7b15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554736390298987251
-    second: cursor_0
+      213: 2399294412241555197
+    second: OrbittingDarts_0
+  - first:
+      213: 8286821958666496390
+    second: OrbittingDarts_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cursor_0
+      name: OrbittingDarts_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 263
-        height: 267
+        y: 166
+        width: 384
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fae81cb40a17fa50800000000000000
-      internalID: 6554736390298987251
+      spriteID: dfecc315e810c4120800000000000000
+      internalID: 2399294412241555197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbittingDarts_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 384
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689293b7aa4b00370800000000000000
+      internalID: 8286821958666496390
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      cursor_0: 6554736390298987251
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
