@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject bubble1;
 
     public BubbleSpawner spawner;
-    public AudioSystem audio;
 
     [SerializeField] float _interval = 3.0f;
     float _time;
@@ -41,7 +40,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _time = 0f;
-        audio = AudioSystem.get();
         ScoreManager = ScoreManager.get();
         ScoreManager.ResetScore();
         bubbles = new List<GameObject>(1000);
@@ -103,7 +101,7 @@ public class GameManager : MonoBehaviour
             if (bub.curHP <= 0)
             {
                 ScoreManager.IncrementScore();
-                audio.playPop();
+                AudioSystem.get().playPop();
                 RemoveBubble(bubble);
             }
         }
