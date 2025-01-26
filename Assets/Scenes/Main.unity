@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5858386005798023868, guid: 58d144fa09b8dba4f8ee837fb3538f3b, type: 3}
       propertyPath: OscillationAmplitude
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -539,6 +539,8 @@ MonoBehaviour:
         m_Calls: []
   currentMilestone: 0
   currentDamage: 1
+  bubbleVelocityScale: 0.3
+  spawnRate: 0.3
   currentPopper: 0
   _interval: 0.1
 --- !u!1 &740073672

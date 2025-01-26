@@ -4,8 +4,8 @@ public class BubbleSpawner : MonoBehaviour
 {
     public GameObject Spawner;
 
-    public float OscillationAmplitude = 10.0f;
-    public float OscillationSpeed = 20.0f;
+    public float OscillationAmplitude = 2.0f;
+    public float OscillationSpeed = 10.0f;
 
     private Vector2 StartPosition = Vector2.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

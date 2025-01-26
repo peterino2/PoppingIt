@@ -1,9 +1,5 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Events;
 
 [System.Serializable]
@@ -43,12 +39,17 @@ public class GameManager : MonoBehaviour
         Single,
         Multiple
     };
+
+    public float bubbleVelocityScale = 0.1f;
+    public float spawnRate = 0.3f;
+
     public PopperType currentPopper;
 
     [SerializeField] float _interval = 3.0f;
     float _time;
 
     public static GameManager Instance
+
     {
         get { 
             if(_instance == null)
@@ -83,6 +84,11 @@ public class GameManager : MonoBehaviour
         milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
     }
 
+    void updateInterval()
+    {
+        _interval = 1.0f / spawnRate;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviour
             SpawnBubble();
             _time -= _interval;
         }
+        updateInterval();
     }
 
     public void AddBubble(int tier, float xPos, float yPos) 
