@@ -60,13 +60,13 @@ public class UpgradeMenuManager : MonoBehaviour
 
         List<UpgradeBase> newUpgrades = new List<UpgradeBase>();
 
-        int indexOfLast = 0;
+        int upgradesAdded = 0;
         for(int i = 0; i < lockedUpgrades.Count; i++)
         {
-            indexOfLast = i;
             if (lockedUpgrades[i].unlockThreshold <= curScore)
             {
                 newUpgrades.Add(lockedUpgrades[i]);
+                upgradesAdded++;
             }
             else
             {
@@ -74,9 +74,9 @@ public class UpgradeMenuManager : MonoBehaviour
             }
         }
 
-        if (indexOfLast != 0)
+        if (upgradesAdded != 0)
         {
-            lockedUpgrades.RemoveRange(0, indexOfLast);
+            lockedUpgrades.RemoveRange(0, upgradesAdded);
             
             foreach (UpgradeBase upgrade in newUpgrades)
             {
