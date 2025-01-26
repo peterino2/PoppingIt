@@ -567,10 +567,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: curve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
@@ -727,26 +723,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[5].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[6].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[7].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[8].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[9].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: curve.m_Curve.Array.data[0].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
@@ -771,20 +747,12 @@ PrefabInstance:
       value: 0.096097805
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[10].time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[1].value
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[2].value
       value: 0.9386969
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[3].value
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[4].value
@@ -799,19 +767,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[7].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[8].value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[9].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[10].value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
@@ -887,18 +847,6 @@ PrefabInstance:
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[10].inSlope
-      value: 40.749073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[11].inSlope
-      value: 40.749073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[1].outSlope
       value: -1.6042403
       objectReference: {fileID: 0}
@@ -911,24 +859,12 @@ PrefabInstance:
       value: 0.56155825
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[3].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[3].outSlope
       value: 0.054302547
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[4].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[4].outSlope
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[5].inWeight
-      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[5].outSlope
@@ -941,10 +877,6 @@ PrefabInstance:
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[6].outSlope
       value: 40.749073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[7].inWeight
-      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[7].outSlope
@@ -967,10 +899,6 @@ PrefabInstance:
       value: 40.749073
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[11].outSlope
-      value: 40.749073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[1].outWeight
       value: 1
       objectReference: {fileID: 0}
@@ -983,23 +911,11 @@ PrefabInstance:
       value: 0.26145124
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[4].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[5].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[6].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[7].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[8].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
@@ -1011,16 +927,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[2].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[3].tangentMode
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
-      propertyPath: skewCurve.m_Curve.Array.data[4].tangentMode
-      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1154714644606407393, guid: a6331101eb5dc4b1a9cdc89e8e528930, type: 3}
       propertyPath: skewCurve.m_Curve.Array.data[5].tangentMode
