@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public float mouseBurnRadius = 0.5f;
+    public float mouseBurnRadius = 0.05f;
     public float mouseBurnDamage = 1;
     public float mouseBurnInterval = 0.2f;
     public bool burnReady = true;
@@ -149,9 +149,9 @@ public class GameManager : MonoBehaviour
     {
         if(!burnReady)
             return;
+
         if (Input.GetMouseButton(0))
         {
-
             Cursor.SetCursor(burnCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
             // Code to execute while left mouse button is held down
             if(mouseBurnDamage > 0)
@@ -209,6 +209,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int hpPerBubble = 1;
+    public double scorePerBubble = 1;
+
     [SerializeField] public float popperChainChance = 0.0f;
     [SerializeField] public int popperChainMaxCount = 5;
     [SerializeField] public float popperChainRadius = 1.0f;
@@ -219,7 +222,6 @@ public class GameManager : MonoBehaviour
     PopperChain popperChain;
 
     List<GameObject> BubblesToRemove = new List<GameObject>();
-
 
     public void DamageBubble(GameObject bubble, bool triggerSecondaryEffects)
     {
