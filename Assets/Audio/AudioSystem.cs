@@ -15,7 +15,9 @@ public class AudioSystem : MonoBehaviour
     List<int> playingList = new List<int>();
 
     GameObject bgmObject;
-    AudioSource bgmSource;
+    public AudioSource bgmSource;
+
+    public float bgmPlayTime = 0.0f;
 
     [SerializeField] GameObject audioPlayerPrefab;
     [SerializeField] bool playBgm = true;
@@ -24,6 +26,8 @@ public class AudioSystem : MonoBehaviour
     AudioMixerGroup mixerGroup;
 
     List<GameObject> popSourceObjects = new List<GameObject>();
+
+    [SerializeField] public AnimationCurve skewCurve;
 
     private void Awake()
     {
@@ -54,13 +58,24 @@ public class AudioSystem : MonoBehaviour
         bgmSource.clip = bgmClip;
         if(playBgm)
         {
-            bgmSource.Play();
+            startBgm();
         }
     }
 
     public static AudioSystem get()
     {
         return gStaticInstance;
+    }
+
+    public void stopBgm()
+    {
+        bgmSource.Pause();
+    }
+
+    public void startBgm()
+    {
+        bgmSource.Play();
+        bgmPlayTime = 0;
     }
 
     public void playPop()
@@ -101,9 +116,18 @@ public class AudioSystem : MonoBehaviour
         removeList.Clear();
     }
 
+    void updatePlaytime()
+    {
+        if(bgmSource.isPlaying)
+        {
+            bgmPlayTime += Time.deltaTime;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         updatePops();
+        updatePlaytime();
     }
 }
