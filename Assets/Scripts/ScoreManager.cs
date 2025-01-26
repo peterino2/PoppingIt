@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     
     private double _currentScore = 0;
 
-    public double scorePerBubble = 1;
 
     public TMP_Text scoreText;
 
@@ -26,7 +25,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncrementScore()
     {
-        _currentScore += scorePerBubble;
+        _currentScore += GameManager.Instance.scorePerBubble;
         scoreText.text = "Score: " + _currentScore.ToString();
     }
 

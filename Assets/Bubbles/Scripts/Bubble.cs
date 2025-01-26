@@ -52,9 +52,8 @@ public class Bubble : MonoBehaviour
 
     void Setup()
     {
-        curHP = 2;
+        curHP = GameManager.Instance.hpPerBubble;
         animator.SetFloat("hp", (float)curHP);
-
         velocity.x = Random.Range(-5f, 5f);
         initialDirection = velocity.x > 0 ? 1 : -1;
 

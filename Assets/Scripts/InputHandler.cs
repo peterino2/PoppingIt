@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +14,7 @@ public class InputHandler : MonoBehaviour
     {
         if (!context.started) return;
 
+        GameManager.Instance.OnClick(); 
         if (GameManager.Instance.currentPopper == GameManager.PopperType.Single)
         {
             var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));

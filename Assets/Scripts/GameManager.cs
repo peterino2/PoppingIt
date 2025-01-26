@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public BubbleSpawner spawner;
 
     public Texture2D cursorTexture;
+    public Texture2D clickedCursorTexture;
+    public Texture2D burnCursorTexture;
 
     public List<ScoreTrigger> milestones;
 
@@ -88,7 +90,7 @@ public class GameManager : MonoBehaviour
             bubbles[i].GetComponent<Renderer>().enabled = false;
         }
         
-        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
 
         milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
     }
@@ -102,7 +104,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-
+        if(clickCursorDelay > 0)
+        {
+            clickCursorDelay -= Time.deltaTime;
+            if(clickCursorDelay <= 0)
+            {
+                Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
+            }
+        }
         popperChainTime -= Time.deltaTime;
         if (popperChainTime < 0)
         {
@@ -110,6 +119,7 @@ public class GameManager : MonoBehaviour
             popperChain.update();
         }
 
+        updateMouseBurn();
         {
             chainLightingProjectile.transform.position = Vector3.Lerp(chainLightingProjectile.transform.position, popperChain.position, 0.3f);
         }
@@ -126,6 +136,46 @@ public class GameManager : MonoBehaviour
             _time -= _interval;
         }
         updateInterval();
+
+    }
+
+    public float mouseBurnRadius = 0.05f;
+    public float mouseBurnDamage = 1;
+    public float mouseBurnInterval = 0.2f;
+    public bool burnReady = true;
+    float mouseBurnTime = 0.0f;
+
+    Collider2D[] results = new Collider2D[50];
+    void updateMouseBurn()
+    {
+        if(!burnReady)
+            return;
+
+        if (Input.GetMouseButton(0))
+        {
+            Cursor.SetCursor(burnCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
+            // Code to execute while left mouse button is held down
+            if(mouseBurnDamage > 0)
+            {
+                mouseBurnTime -= Time.deltaTime;
+                if(mouseBurnTime <= 0)
+                {
+                    mouseBurnTime = mouseBurnInterval;
+                    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mouseWorldPosition.z = 0f; // Set z to 0 for 2D games
+                    int numColliders = Physics2D.OverlapCircleNonAlloc(mouseWorldPosition, mouseBurnRadius, results);
+                    for(int i = 0; i < numColliders; i += 1)
+                    {
+                        DamageBubble(results[i].gameObject, true);
+
+                    }
+                }
+            }
+        }
+        else
+        {
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
+        }
     }
 
     public void AddBubble(int tier, float xPos, float yPos) 
@@ -161,6 +211,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int hpPerBubble = 1;
+    public double scorePerBubble = 1;
+
     [SerializeField] public float popperChainChance = 0.0f;
     [SerializeField] public int popperChainMaxCount = 5;
     [SerializeField] public float popperChainRadius = 1.0f;
@@ -171,7 +224,6 @@ public class GameManager : MonoBehaviour
     PopperChain popperChain;
 
     List<GameObject> BubblesToRemove = new List<GameObject>();
-
 
     public void DamageBubble(GameObject bubble, bool triggerSecondaryEffects)
     {
@@ -208,6 +260,12 @@ public class GameManager : MonoBehaviour
 
     public void addToRemoveList(GameObject bubble) { 
         BubblesToRemove.Add(bubble);
+    }
+    float clickCursorDelay = 0.0f;
+    public void OnClick()
+    {
+        Cursor.SetCursor(clickedCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
+        clickCursorDelay = 0.14f;
     }
 
     public void RemoveBubble(GameObject bubble) 

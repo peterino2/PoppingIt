@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class BubbleWand: MonoBehaviour
+public class BubbleWand : UpgradeBase
 {
-    public void onUpgrade()
+    public override void onUpgrade()
     {
         GameManager.Instance.spawnRate += 0.3f;
     }
