@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public Texture2D cursorTexture;
     public Texture2D clickedCursorTexture;
+    public Texture2D burnCursorTexture;
 
     public List<ScoreTrigger> milestones;
 
@@ -140,13 +141,18 @@ public class GameManager : MonoBehaviour
     public float mouseBurnRadius = 0.5f;
     public float mouseBurnDamage = 1;
     public float mouseBurnInterval = 0.2f;
+    public bool burnReady = true;
     float mouseBurnTime = 0.0f;
 
     Collider2D[] results = new Collider2D[50];
     void updateMouseBurn()
     {
+        if(!burnReady)
+            return;
         if (Input.GetMouseButton(0))
         {
+
+            Cursor.SetCursor(burnCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
             // Code to execute while left mouse button is held down
             if(mouseBurnDamage > 0)
             {
@@ -164,6 +170,10 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+        }
+        else
+        {
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
 

@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4857d7c11afd7b3488bc046ee98bd8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 2982272429225396847, guid: 3b1ed3c68f20ec94a92e28077339df6f, type: 3}
   upgradeName: 
   description: 
   cost: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3151278589a0f2d4fa967ae53b52214b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 2982272429225396847, guid: 3b1ed3c68f20ec94a92e28077339df6f, type: 3}
   upgradeName: 
   description: 
   cost: 0
@@ -264,11 +264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa10834d337b5af4287f75d6664e820d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  upgradeName: 
-  description: 
-  cost: 0
-  unlockThreshold: 0
+  sprite: {fileID: 5065840939803200295, guid: 3e75e55cf7b1a2a4ab681ed8381a8a4f, type: 3}
+  upgradeName: Bubble Wand
+  description: A simple Bubble Wand!
+  cost: 5
+  unlockThreshold: 1
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,12 +1691,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: cursorTexture
       value: 
       objectReference: {fileID: 2800000, guid: 81048ca663dbf1f4bad4d620633d3d84, type: 3}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: burnCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: f7b515365e0b71643ad145af257afc0b, type: 3}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: popperChainChance
       value: 1
