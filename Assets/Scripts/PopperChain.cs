@@ -7,7 +7,7 @@ public class PopperChain
 
     Collider2D[] results = new Collider2D[50];
 
-    public Vector3 position = Vector3.zero;
+    public Vector3 position = new Vector3(-20.0f, -20, 0);
 
     float jumpChance = 0.0f;
     float radius = 0.0f;

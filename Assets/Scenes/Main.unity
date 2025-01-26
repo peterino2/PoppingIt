@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -8465279339146857030, guid: f442b32e327f511439409ecbf847d28a, type: 3}
   upgradeName: Bubble Blaster
-  description: 
+  description: Industrial levels of bubbles
   cost: 200
   unlockThreshold: 50
 --- !u!114 &343847714
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2982272429225396847, guid: 3b1ed3c68f20ec94a92e28077339df6f, type: 3}
   upgradeName: Super Wand
-  description: 
+  description: more bubbles to pop!
   cost: 50
   unlockThreshold: 25
 --- !u!114 &343847715
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -2398281607700954540, guid: fd6c6eefdf5547945bdc8d90f16cb9e4, type: 3}
   upgradeName: Apocalypse
-  description: 
+  description: Chain lighting, faster. stronger
   cost: 2000
   unlockThreshold: 500
 --- !u!114 &343847719
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -7468412588846602964, guid: f4f18ac65e01ad64eb2af2179b102393, type: 3}
   upgradeName: Chain Range
-  description: 
+  description: Chain lighting goes further
   cost: 200
   unlockThreshold: 100
 --- !u!114 &343847720
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -3469067119388258510, guid: d1c074bb2616e9d4b87f3a17b094a336, type: 3}
   upgradeName: Chain Lighting
-  description: 
+  description: clicks chain to multiple bubbles
   cost: 50
   unlockThreshold: 50
 --- !u!114 &343847721
@@ -481,10 +481,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 5556150181158091387, guid: 0a527f4faa8c09a4fb5d4e6c0c015c60, type: 3}
-  upgradeName: Mega Bubbler
-  description: 
-  cost: 10000
-  unlockThreshold: 10000
+  upgradeName: Bubblinator
+  description: So many bubbles...
+  cost: 4000
+  unlockThreshold: 3000
 --- !u!114 &343847722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,11 +568,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  upgradeName: 
-  description: 
-  cost: 0
-  unlockThreshold: 0
-  bonziBuddyObject: {fileID: 0}
+  upgradeName: Bonzi Buddy
+  description: Your best friend, pops bubbles for you
+  cost: 1500
+  unlockThreshold: 300
+  bonziBuddyObject: {fileID: 141077664}
 --- !u!114 &343847728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,8 +588,8 @@ MonoBehaviour:
   sprite: {fileID: -8795339725668836572, guid: 905339c42a5b34b1481401216084a6ec, type: 3}
   upgradeName: Satans Butt
   description: the ultimate in bubble generation
-  cost: 0
-  unlockThreshold: 0
+  cost: 5000
+  unlockThreshold: 5000
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2091080570766286648, guid: 66013c76ca7c8674a8d496683874904d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.93
+      value: -5.42
       objectReference: {fileID: 0}
     - target: {fileID: 2091080570766286648, guid: 66013c76ca7c8674a8d496683874904d, type: 3}
       propertyPath: m_LocalPosition.z
