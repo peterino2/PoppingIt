@@ -34,6 +34,18 @@ public class ScoreManager : MonoBehaviour
         _currentScore = 0;
         scoreText.text = "Score: " + _currentScore.ToString();
     }
+
+    public bool SpendScore(double cost)
+    {
+        if (_currentScore < cost)
+        {
+            return false;
+        }
+
+        _currentScore -= cost;
+        scoreText.text = "Score: " + _currentScore.ToString();
+        return true;
+    }
     
     public double GetScore()
     {

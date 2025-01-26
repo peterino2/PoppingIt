@@ -24,6 +24,6 @@ public class UpgradeUI : MonoBehaviour
 
     public void OnClick()
     {
-        menuManager.RemoveUpgrade(this);
+        menuManager.PurchaseUpgrade(this);
     }
 }

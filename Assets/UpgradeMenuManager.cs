@@ -85,8 +85,13 @@ public class UpgradeMenuManager : MonoBehaviour
         }
     }
 
-    public void RemoveUpgrade(UpgradeUI upgrade)
+    public void PurchaseUpgrade(UpgradeUI upgrade)
     {
+        if(!ScoreManager.get().SpendScore(upgrade.upgrade.cost))
+        {
+            return;
+        }
+
         if (upgrade.upgrade != null)
         {
             upgrade.upgrade.onUpgrade();
