@@ -1523,6 +1523,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2020576473}
+  - {fileID: 1264358381}
   - {fileID: 589530840}
   - {fileID: 904046358}
   m_Father: {fileID: 0}
@@ -1850,12 +1851,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2020576473}
+  m_Father: {fileID: 981732662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 598.9899, y: -547.12}
-  m_SizeDelta: {x: 1302.18, y: 869.43}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 705.09, y: -525.19995}
+  m_SizeDelta: {x: 1302.18, y: 869.42993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264358382
 MonoBehaviour:
@@ -1942,7 +1943,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 447.79767, w: 524.2615}
+  m_margin: {x: 0, y: 0, z: 797.8523, w: 697.00635}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2437,14 +2438,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1264358381}
+  m_Children: []
   m_Father: {fileID: 981732662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -145}
-  m_SizeDelta: {x: -10, y: 200}
+  m_AnchoredPosition: {x: 148.9, y: -74.399994}
+  m_SizeDelta: {x: 214.82, y: 32.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020576474
 MonoBehaviour:
@@ -3068,7 +3068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303801043630414655, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5457916928591499582, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_UseSpriteMesh
