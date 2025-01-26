@@ -75,10 +75,14 @@ public class Bubble : MonoBehaviour
         curHP -= dmg;
         animator.SetFloat("hp", (float)curHP);
         if (curHP > 0) {
-            
+            //animator.ResetTrigger("Damaged");
             animator.SetTrigger("Damaged");
-
         }
+    }
+
+    public void PendingRemoval() {
+        Debug.Log("Pend Removal");
+        GameManager.Instance.addToRemoveList(gameObject);
     }
 
     void updateSpriteOnHit(double hits) 

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -103,7 +104,7 @@ public class GameManager : MonoBehaviour
 
 
         popperChainTime -= Time.deltaTime;
-        if(popperChainTime < 0)
+        if (popperChainTime < 0)
         {
             popperChainTime += popperChainInterval;
             popperChain.update();
@@ -113,7 +114,7 @@ public class GameManager : MonoBehaviour
             chainLightingProjectile.transform.position = Vector3.Lerp(chainLightingProjectile.transform.position, popperChain.position, 0.3f);
         }
 
-        foreach(GameObject b in BubblesToRemove)
+        foreach (GameObject b in BubblesToRemove)
         {
             RemoveBubble(b);
         }
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
                 bubbles[i].gameObject.GetComponent<Renderer>().enabled = true;
                 bubbles[i].gameObject.SetActive(true);
+                bubbles[i].GetComponent<CircleCollider2D>().enabled = true;
                 spawned = true;
                 bubbles[i].GetComponent<Bubble>().ReEnable(spawner.GetSpawnerLocation());
                 Debug.Log("SPawned");
@@ -177,9 +179,9 @@ public class GameManager : MonoBehaviour
 
         if (bub != null)
         {
-            if(triggerSecondaryEffects)
+            if (triggerSecondaryEffects)
             {
-                if(Random.Range(0.0f, 1.0f) < popperChainChance && popperChain.isFinished())
+                if (Random.Range(0.0f, 1.0f) < popperChainChance && popperChain.isFinished())
                 {
                     popperChain.startChain(bubble.transform.position, popperChainMaxCount - 1, popperChainRadius, popperChainChance);
                 }
@@ -191,7 +193,10 @@ public class GameManager : MonoBehaviour
                 ScoreManager.IncrementScore();
                 AudioSystem.get().playPop();
                 //RemoveBubble(bubble);
-                BubblesToRemove.Add(bubble);
+                bubble.GetComponent<CircleCollider2D>().enabled = false;
+                //StartCoroutine(AnimWait());
+
+                //BubblesToRemove.Add(bubble);
 
             }
         }
@@ -199,6 +204,10 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void addToRemoveList(GameObject bubble) { 
+        BubblesToRemove.Add(bubble);
     }
 
     public void RemoveBubble(GameObject bubble) 
