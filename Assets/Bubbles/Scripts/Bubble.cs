@@ -23,7 +23,7 @@ public class Bubble : MonoBehaviour
     {
         transform.position += velocity * Time.deltaTime * GameManager.Instance.bubbleVelocityScale;
 
-        if(transform.position.y > 5.0f)
+        if(transform.position.y > 10.0f)
         {
             GameManager.Instance.RemoveBubble(gameObject);
             return;

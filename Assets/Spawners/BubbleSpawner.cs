@@ -6,6 +6,7 @@ public class BubbleSpawner : MonoBehaviour
 
     public float OscillationAmplitude = 2.0f;
     public float OscillationSpeed = 10.0f;
+    public float ElapsedTime = 0.0f;
 
     private Vector2 StartPosition = Vector2.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,12 +18,8 @@ public class BubbleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(OscillationSpeed * Time.deltaTime, 0.0f ,0.0f);
-        if (transform.position.x >= StartPosition.x + OscillationAmplitude || transform.position.x <= StartPosition.x - OscillationAmplitude)
-        {
-            OscillationSpeed *= -1.0f;
-        }
-        
+        ElapsedTime += Time.deltaTime * OscillationSpeed;
+        transform.position = new Vector3( OscillationAmplitude * Mathf.Sin(ElapsedTime), 0.0f, 0.0f);
     }
 
     public Vector3 GetSpawnerLocation()

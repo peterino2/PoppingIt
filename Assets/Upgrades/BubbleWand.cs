@@ -7,4 +7,3 @@ public class BubbleWand: MonoBehaviour
         GameManager.Instance.spawnRate += 0.3f;
     }
 }
-

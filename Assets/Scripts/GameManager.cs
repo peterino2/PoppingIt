@@ -48,6 +48,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] float _interval = 3.0f;
     float _time;
 
+    [SerializeField] GameObject popperChainPrefab;
+
+    GameObject chainLightingProjectile;
+    [SerializeField] float chainLightingSpeed = 20.0f;
+
+
     public static GameManager Instance
 
     {
@@ -65,6 +71,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         _instance = this;
+        popperChain = new PopperChain();
+        chainLightingProjectile = Instantiate(popperChainPrefab);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -92,6 +100,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        popperChainTime -= Time.deltaTime;
+        if(popperChainTime < 0)
+        {
+            popperChainTime += popperChainInterval;
+            popperChain.update();
+        }
+
+        {
+            chainLightingProjectile.transform.position = Vector3.Lerp(chainLightingProjectile.transform.position, popperChain.position, 0.3f);
+        }
+
+        foreach(GameObject b in BubblesToRemove)
+        {
+            RemoveBubble(b);
+        }
+        BubblesToRemove.Clear();
+
         _time += Time.deltaTime;
         while (_time >= _interval) {
             SpawnBubble();
@@ -132,18 +159,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DamageBubble(GameObject bubble)
+    [SerializeField] public float popperChainChance = 0.0f;
+    [SerializeField] public int popperChainMaxCount = 5;
+    [SerializeField] public float popperChainRadius = 1.0f;
+    [SerializeField] public float popperChainInterval = 0.1f;
+
+    float popperChainTime = 0.0f;
+
+    PopperChain popperChain;
+
+    List<GameObject> BubblesToRemove = new List<GameObject>();
+
+
+    public void DamageBubble(GameObject bubble, bool triggerSecondaryEffects)
     {
         Bubble bub = bubble.GetComponent<Bubble>();
 
         if (bub != null)
         {
+            if(triggerSecondaryEffects)
+            {
+                if(Random.Range(0.0f, 1.0f) < popperChainChance && popperChain.isFinished())
+                {
+                    popperChain.startChain(bubble.transform.position, popperChainMaxCount - 1, popperChainRadius, popperChainChance);
+                }
+            }
+
             bub.takeDamage(currentDamage);
             if (bub.curHP <= 0)
             {
                 ScoreManager.IncrementScore();
                 AudioSystem.get().playPop();
-                RemoveBubble(bubble);
+                //RemoveBubble(bubble);
+                BubblesToRemove.Add(bubble);
+
             }
         }
         else
