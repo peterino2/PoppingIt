@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +15,36 @@ public class InputHandler : MonoBehaviour
     {
         if (!context.started) return;
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider) return;
+        if (GameManager.Instance.currentPopper == GameManager.PopperType.Single)
+        {
+            var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+            if (!rayHit.collider) return;
 
-        Debug.Log(rayHit.collider.gameObject.name);
+            Debug.Log(rayHit.collider.gameObject.name);
 
-        GameManager.Instance.DamageBubble(rayHit.collider.gameObject);
+            GameManager.Instance.DamageBubble(rayHit.collider.gameObject);
+        }
+        else
+        {
+            var results =  Physics2D.OverlapCircleAll(_mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()) , 
+                20);
+
+            foreach (var result in results)
+            {
+                GameManager.Instance.DamageBubble(result.gameObject);
+                Debug.Log(result.gameObject.name);
+            }
+        }
         
+    }
+
+    public void OnNext()
+    {
+        GameManager.Instance.currentPopper = GameManager.PopperType.Multiple;
+    }
+
+    public void OnPrevious()
+    {
+        GameManager.Instance.currentPopper = GameManager.PopperType.Single;
     }
 }

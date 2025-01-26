@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,15 @@ public class GameManager : MonoBehaviour
     public GameObject bubble1;
 
     public BubbleSpawner spawner;
+
+    public Texture2D cursorTexture;
+
+    public enum PopperType
+    {
+        Single,
+        Multiple
+    };
+    public PopperType currentPopper;
 
     [SerializeField] float _interval = 3.0f;
     float _time;
@@ -48,6 +58,8 @@ public class GameManager : MonoBehaviour
             bubbles.Add(Instantiate(bubble1));
             bubbles[i].GetComponent<Renderer>().enabled = false;
         }
+        
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     }
 
     // Update is called once per frame
