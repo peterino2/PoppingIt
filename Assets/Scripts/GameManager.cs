@@ -121,6 +121,13 @@ public class GameManager : MonoBehaviour
 
         milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
         currentMilestone = 0;
+
+        comboColors.Add(Color.white);
+        comboColors.Add(Color.cyan);
+        comboColors.Add(Color.yellow);
+        comboColors.Add(Color.magenta);
+        comboColors.Add(Color.green);
+        comboColors.Add(Color.red);
     }
 
     public void ShowShop()
@@ -188,6 +195,7 @@ public class GameManager : MonoBehaviour
             combo = 0;
             comboText.text = "";
             currentComboMultiplier = 1.0f;
+            comboText.color = Color.white;
         }
     }
 
@@ -199,6 +207,9 @@ public class GameManager : MonoBehaviour
     float mouseBurnTime = 0.0f;
 
     public SpriteRenderer skyRenderer;
+
+    [SerializeField]
+    List<Color> comboColors = new List<Color>();
 
     Collider2D[] results = new Collider2D[50];
     void updateMouseBurn()
@@ -330,6 +341,20 @@ public class GameManager : MonoBehaviour
         comboText.text = "Chain: " + combo.ToString();
         comboText.fontSize = 18 + combo / comboMultStepSize;
         curComboTimer = maxComboTimer;
+
+        if(combo % comboMultStepSize == 0)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Color newColor = comboColors[Random.Range(0, comboColors.Count)];
+                if(newColor != comboText.color)
+                {
+                    comboText.color = newColor;
+                    break;
+                }
+            }
+            
+        }
     }
 
     void CheckMilestones()
