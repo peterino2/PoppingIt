@@ -47,7 +47,7 @@ MonoBehaviour:
   pops:
   - {fileID: 8300000, guid: c8a5131584a48417d9324f231dab21ab, type: 3}
   - {fileID: 8300000, guid: 134d1dbb961c641cebfce542baab6873, type: 3}
-  bgmClip: {fileID: 8300000, guid: 95535c2c3e1224b01973a913cbcd4bc6, type: 3}
+  bgmClip: {fileID: 8300000, guid: 6d1eb180fb29c41de87b322ac3390619, type: 3}
   bgmSource: {fileID: 0}
   bgmPlayTime: 0
   audioPlayerPrefab: {fileID: 6893965723790259241, guid: bdb2d6aa2c34a4a41b2d299076543f95, type: 3}
@@ -167,3 +167,5 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 1
     m_RotationOrder: 4
+  updateStep: 0.05
+  clipLoudness: 0

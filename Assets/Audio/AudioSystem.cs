@@ -124,10 +124,33 @@ public class AudioSystem : MonoBehaviour
         }
     }
 
+    public float updateStep = 0.05f;
+    const int sampleDataLength = 1024;
+
+    private float currentUpdateTime = 0f;
+    public float clipLoudness;
+    private float[] clipSampleData = new float[sampleDataLength];
+    void updateAmplitude()
+    {
+        currentUpdateTime += Time.deltaTime;
+        //if (currentUpdateTime >= updateStep)
+        {
+            currentUpdateTime = 0f;
+            bgmSource.GetOutputData(clipSampleData, 0);
+            clipLoudness = 0f;
+            foreach (var sample in clipSampleData)
+            {
+                clipLoudness += Mathf.Abs(sample);
+            }
+            clipLoudness /= sampleDataLength;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         updatePops();
         updatePlaytime();
+        updateAmplitude();
     }
 }
