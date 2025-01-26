@@ -145,19 +145,23 @@ public class GameManager : MonoBehaviour
     Collider2D[] results = new Collider2D[50];
     void updateMouseBurn()
     {
-        if(mouseBurnDamage > 0)
+        if (Input.GetMouseButton(0))
         {
-            mouseBurnTime -= Time.deltaTime;
-            if(mouseBurnTime <= 0)
+            // Code to execute while left mouse button is held down
+            if(mouseBurnDamage > 0)
             {
-                mouseBurnTime = mouseBurnInterval;
-                Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mouseWorldPosition.z = 0f; // Set z to 0 for 2D games
-                int numColliders = Physics2D.OverlapCircleNonAlloc(mouseWorldPosition, mouseBurnRadius, results);
-                for(int i = 0; i < numColliders; i += 1)
+                mouseBurnTime -= Time.deltaTime;
+                if(mouseBurnTime <= 0)
                 {
-                    DamageBubble(results[i].gameObject, true);
+                    mouseBurnTime = mouseBurnInterval;
+                    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mouseWorldPosition.z = 0f; // Set z to 0 for 2D games
+                    int numColliders = Physics2D.OverlapCircleNonAlloc(mouseWorldPosition, mouseBurnRadius, results);
+                    for(int i = 0; i < numColliders; i += 1)
+                    {
+                        DamageBubble(results[i].gameObject, true);
 
+                    }
                 }
             }
         }

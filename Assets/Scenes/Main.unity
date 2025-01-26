@@ -184,6 +184,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d144fa09b8dba4f8ee837fb3538f3b, type: 3}
+--- !u!1 &343847711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343847712}
+  - component: {fileID: 343847715}
+  - component: {fileID: 343847714}
+  - component: {fileID: 343847713}
+  m_Layer: 0
+  m_Name: UpgradeList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343847712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1126.5334, y: 54.952885, z: -7319.5493}
+  m_LocalScale: {x: 86.4, y: 86.4, z: 86.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 904046358}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343847713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4857d7c11afd7b3488bc046ee98bd8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  upgradeName: 
+  description: 
+  cost: 0
+  unlockThreshold: 0
+--- !u!114 &343847714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3151278589a0f2d4fa967ae53b52214b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  upgradeName: 
+  description: 
+  cost: 0
+  unlockThreshold: 0
+--- !u!114 &343847715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa10834d337b5af4287f75d6664e820d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  upgradeName: 
+  description: 
+  cost: 0
+  unlockThreshold: 0
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,13 +1854,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2634313958681143067, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1929258758542317760, guid: 3c97f0231275de844b95ef4390377aea, type: 3}
+    - target: {fileID: 2634313958681143067, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: upgradesList
+      value: 
+      objectReference: {fileID: 343847711}
     - target: {fileID: 5303801043630414655, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_Name
       value: UpgradeMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 343847712}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
 --- !u!1660057539 &9223372036854775807
