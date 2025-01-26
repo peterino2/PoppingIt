@@ -4,6 +4,6 @@ public class BubbleDamageUpgrade : UpgradeBase
 {
     public override void onUpgrade()
     {
-        GameManager.Instance.currentDamage += 1;
+        GameManager.Instance.currentDamage += 2;
     }
 }

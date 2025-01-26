@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 447.79767, w: 524.2615}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2441,10 +2441,10 @@ RectTransform:
   - {fileID: 1264358381}
   m_Father: {fileID: 981732662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115, y: -70}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -376.5, y: 224}
+  m_SizeDelta: {x: -783, y: -538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020576474
 MonoBehaviour:
@@ -2960,7 +2960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2968,11 +2968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 718.69
+      value: 515.69
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3012,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -294
       objectReference: {fileID: 0}
     - target: {fileID: 480039746800520789, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3041,6 +3041,14 @@ PrefabInstance:
     - target: {fileID: 5303801043630414655, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457916928591499582, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457916928591499582, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8363633055194246750, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_AnchorMax.x
