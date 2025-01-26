@@ -17,6 +17,9 @@ public class UpgradeMenuManager : MonoBehaviour
     [SerializeField]
     RectTransform Rect;
 
+    [SerializeField]
+    RectTransform ShopBounds;
+
     UpgradeMenuState MenuState = UpgradeMenuState.Closed;
 
     public List<UpgradeBase> lockedUpgrades;
@@ -44,14 +47,14 @@ public class UpgradeMenuManager : MonoBehaviour
         InactiveUIPool = new List<UpgradeUI>();
         for (int i = 0; i < 100; i++)
         {
-            InactiveUIPool.Add(Instantiate(prefab, transform).GetComponent<UpgradeUI>());
+            InactiveUIPool.Add(Instantiate(prefab, ShopBounds.transform).GetComponent<UpgradeUI>());
             InactiveUIPool[i].menuManager = this;
             InactiveUIPool[i].gameObject.SetActive(false);
         }
 
         prefabSize = prefab.GetComponent<RectTransform>().rect.size;
-        maxColumns = (int)(Rect.rect.width / prefabSize.x);
-        maxRows = (int)(Rect.rect.height / prefabSize.y);
+        maxColumns = (int)(ShopBounds.rect.width / prefabSize.x);
+        maxRows = (int)(ShopBounds.rect.height / prefabSize.y);
     }
 
     void UnlockUpgrades()
@@ -114,7 +117,7 @@ public class UpgradeMenuManager : MonoBehaviour
         {
             for(int i = 0; i < 20; i++)
             {
-                InactiveUIPool.Add(Instantiate(prefab, transform).GetComponent<UpgradeUI>());
+                InactiveUIPool.Add(Instantiate(prefab, ShopBounds.transform).GetComponent<UpgradeUI>());
                 InactiveUIPool[i].menuManager = this;
                 InactiveUIPool[i].gameObject.SetActive(false);
             }
