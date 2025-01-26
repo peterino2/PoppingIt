@@ -4,6 +4,7 @@ public class Bubble : MonoBehaviour
 {
     public double curHP;
     public double score;
+    public Animator animator;
 
     protected Vector3 velocity = Vector3.zero;
 
@@ -51,7 +52,9 @@ public class Bubble : MonoBehaviour
 
     void Setup()
     {
-        curHP = 1;
+        curHP = 2;
+        animator.SetFloat("hp", (float)curHP);
+
         velocity.x = Random.Range(-5f, 5f);
         initialDirection = velocity.x > 0 ? 1 : -1;
 
@@ -70,6 +73,12 @@ public class Bubble : MonoBehaviour
     public void takeDamage(double dmg)
     {
         curHP -= dmg;
+        animator.SetFloat("hp", (float)curHP);
+        if (curHP > 0) {
+            
+            animator.SetTrigger("Damaged");
+
+        }
     }
 
     void updateSpriteOnHit(double hits) 
