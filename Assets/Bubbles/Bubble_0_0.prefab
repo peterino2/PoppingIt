@@ -105,7 +105,14 @@ MonoBehaviour:
   curHP: 0
   score: 0
   animator: {fileID: 1292717637980318072}
+  spriteRend: {fileID: 7973905275137968288}
   deceleration: 0
+  tint1: {r: 1, g: 1, b: 1, a: 1}
+  tint2: {r: 0, g: 1, b: 0.23313022, a: 1}
+  tint3: {r: 0.9837489, g: 1, b: 0, a: 1}
+  texture1: {fileID: 8161639163823409263, guid: a1b66880861782e4295c400aa2683332, type: 3}
+  texture2: {fileID: 21300000, guid: 3dc035265e0f649f798689f111fe1d1e, type: 3}
+  texture3: {fileID: 21300000, guid: 06f4736ba37504b329f22aeb8d24a841, type: 3}
 --- !u!58 &8183895777202355203
 CircleCollider2D:
   m_ObjectHideFlags: 0

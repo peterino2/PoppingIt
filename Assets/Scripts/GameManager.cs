@@ -187,7 +187,6 @@ public class GameManager : MonoBehaviour
                     for(int i = 0; i < numColliders && i < mouseBurnTargetCount; i += 1)
                     {
                         DamageBubble(results[i].gameObject, true);
-
                     }
                 }
             }
@@ -292,5 +291,17 @@ public class GameManager : MonoBehaviour
     {
         bubble.GetComponent<Renderer>().enabled = false;
         bubble.SetActive(false);
+    }
+
+
+    /// ------------------
+    
+    float passiveGenerator;
+    
+    // pops
+    float randomPopperInterval;
+    
+    void updateRandomPopper()
+    {
     }
 }
