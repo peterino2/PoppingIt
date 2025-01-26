@@ -22,9 +22,9 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += velocity * Time.deltaTime;
+        transform.position += velocity * Time.deltaTime * GameManager.Instance.bubbleVelocityScale;
 
-        if(transform.position.y > 5.0f)
+        if(transform.position.y > 10.0f)
         {
             GameManager.Instance.RemoveBubble(gameObject);
             return;

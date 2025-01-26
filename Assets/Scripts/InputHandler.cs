@@ -22,7 +22,7 @@ public class InputHandler : MonoBehaviour
 
             Debug.Log(rayHit.collider.gameObject.name);
 
-            GameManager.Instance.DamageBubble(rayHit.collider.gameObject);
+            GameManager.Instance.DamageBubble(rayHit.collider.gameObject, true);
         }
         else
         {
@@ -31,7 +31,7 @@ public class InputHandler : MonoBehaviour
 
             foreach (var result in results)
             {
-                GameManager.Instance.DamageBubble(result.gameObject);
+                GameManager.Instance.DamageBubble(result.gameObject, true);
                 Debug.Log(result.gameObject.name);
             }
         }
