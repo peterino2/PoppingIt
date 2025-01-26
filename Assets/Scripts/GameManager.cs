@@ -2,7 +2,21 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class ScoreTrigger
+{
+    public double Score = 0;
+    public UnityEvent OnScoreTriggered;
+
+    public void NotifyScoreTriggered()
+    {
+        OnScoreTriggered.Invoke();
+    }
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +29,21 @@ public class GameManager : MonoBehaviour
     public GameObject bubble1;
 
     public BubbleSpawner spawner;
+
+    public Texture2D cursorTexture;
+
+    public List<ScoreTrigger> milestones;
+
+    public int currentMilestone = 0;
+
+    public double currentDamage = 1.0f;
+
+    public enum PopperType
+    {
+        Single,
+        Multiple
+    };
+    public PopperType currentPopper;
 
     [SerializeField] float _interval = 3.0f;
     float _time;
@@ -48,6 +77,10 @@ public class GameManager : MonoBehaviour
             bubbles.Add(Instantiate(bubble1));
             bubbles[i].GetComponent<Renderer>().enabled = false;
         }
+        
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+
+        milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
     }
 
     // Update is called once per frame
@@ -83,6 +116,7 @@ public class GameManager : MonoBehaviour
         {
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
                 bubbles[i].gameObject.GetComponent<Renderer>().enabled = true;
+                bubbles[i].gameObject.SetActive(true);
                 spawned = true;
                 bubbles[i].GetComponent<Bubble>().ReEnable(spawner.GetSpawnerLocation());
                 Debug.Log("SPawned");
@@ -97,7 +131,7 @@ public class GameManager : MonoBehaviour
 
         if (bub != null)
         {
-            bub.takeDamage(1);
+            bub.takeDamage(currentDamage);
             if (bub.curHP <= 0)
             {
                 ScoreManager.IncrementScore();
@@ -114,5 +148,6 @@ public class GameManager : MonoBehaviour
     public void RemoveBubble(GameObject bubble) 
     {
         bubble.GetComponent<Renderer>().enabled = false;
+        bubble.SetActive(false);
     }
 }

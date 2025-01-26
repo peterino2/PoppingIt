@@ -15,7 +15,9 @@ public class AudioSystem : MonoBehaviour
     List<int> playingList = new List<int>();
 
     GameObject bgmObject;
-    AudioSource bgmSource;
+    public AudioSource bgmSource;
+
+    public float bgmPlayTime = 0.0f;
 
     [SerializeField] GameObject audioPlayerPrefab;
     [SerializeField] bool playBgm = true;
@@ -24,6 +26,8 @@ public class AudioSystem : MonoBehaviour
     AudioMixerGroup mixerGroup;
 
     List<GameObject> popSourceObjects = new List<GameObject>();
+
+    [SerializeField] public AnimationCurve skewCurve;
 
     private void Awake()
     {
@@ -54,13 +58,24 @@ public class AudioSystem : MonoBehaviour
         bgmSource.clip = bgmClip;
         if(playBgm)
         {
-            bgmSource.Play();
+            startBgm();
         }
     }
 
     public static AudioSystem get()
     {
         return gStaticInstance;
+    }
+
+    public void stopBgm()
+    {
+        bgmSource.Pause();
+    }
+
+    public void startBgm()
+    {
+        bgmSource.Play();
+        bgmPlayTime = 0;
     }
 
     public void playPop()
@@ -74,6 +89,7 @@ public class AudioSystem : MonoBehaviour
         int index = freeSources[freeSources.Count - 1];
         freeSources.RemoveAt(freeSources.Count - 1);
         AudioClip selectedPop = pops[Random.Range(0, 2)];
+        popSources[index].pitch = Random.Range(0.75f, 1.25f);
         popSources[index].PlayOneShot(selectedPop);
         playingList.Add(index);
     }
@@ -101,9 +117,41 @@ public class AudioSystem : MonoBehaviour
         removeList.Clear();
     }
 
+    void updatePlaytime()
+    {
+        if(bgmSource.isPlaying)
+        {
+            bgmPlayTime += Time.deltaTime;
+        }
+    }
+
+    public float updateStep = 0.05f;
+    const int sampleDataLength = 1024;
+
+    private float currentUpdateTime = 0f;
+    public float clipLoudness;
+    private float[] clipSampleData = new float[sampleDataLength];
+    void updateAmplitude()
+    {
+        currentUpdateTime += Time.deltaTime;
+        //if (currentUpdateTime >= updateStep)
+        {
+            currentUpdateTime = 0f;
+            bgmSource.GetOutputData(clipSampleData, 0);
+            clipLoudness = 0f;
+            foreach (var sample in clipSampleData)
+            {
+                clipLoudness += Mathf.Abs(sample);
+            }
+            clipLoudness /= sampleDataLength;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         updatePops();
+        updatePlaytime();
+        updateAmplitude();
     }
 }

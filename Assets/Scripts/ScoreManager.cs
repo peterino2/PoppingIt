@@ -8,7 +8,9 @@ public class ScoreManager : MonoBehaviour
 {
     static ScoreManager gStaticInstance; 
     
-    private int _currentScore = 0;
+    private double _currentScore = 0;
+
+    public double scorePerBubble = 1;
 
     public TMP_Text scoreText;
 
@@ -24,7 +26,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncrementScore()
     {
-        _currentScore += 1;
+        _currentScore += scorePerBubble;
         scoreText.text = "Score: " + _currentScore.ToString();
     }
 
@@ -34,7 +36,7 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + _currentScore.ToString();
     }
     
-    public int GetScore()
+    public double GetScore()
     {
         return _currentScore;
     }
