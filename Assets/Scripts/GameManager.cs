@@ -4,6 +4,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class ScoreTrigger
+{
+    public double Score = 0;
+    public UnityEvent OnScoreTriggered;
+
+    public void NotifyScoreTriggered()
+    {
+        OnScoreTriggered.Invoke();
+    }
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +31,12 @@ public class GameManager : MonoBehaviour
     public BubbleSpawner spawner;
 
     public Texture2D cursorTexture;
+
+    public List<ScoreTrigger> milestones;
+
+    public int currentMilestone = 0;
+
+    public double currentDamage = 1.0f;
 
     public enum PopperType
     {
@@ -60,6 +79,8 @@ public class GameManager : MonoBehaviour
         }
         
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+
+        milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
     }
 
     // Update is called once per frame
@@ -109,7 +130,7 @@ public class GameManager : MonoBehaviour
 
         if (bub != null)
         {
-            bub.takeDamage(1);
+            bub.takeDamage(currentDamage);
             if (bub.curHP <= 0)
             {
                 ScoreManager.IncrementScore();
