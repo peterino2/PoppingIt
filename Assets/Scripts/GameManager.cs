@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         {
             if (!bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
                 bubbles[i].gameObject.GetComponent<Renderer>().enabled = true;
+                bubbles[i].gameObject.SetActive(true);
                 spawned = true;
                 bubbles[i].GetComponent<Bubble>().ReEnable(spawner.GetSpawnerLocation());
                 Debug.Log("SPawned");
@@ -147,5 +148,6 @@ public class GameManager : MonoBehaviour
     public void RemoveBubble(GameObject bubble) 
     {
         bubble.GetComponent<Renderer>().enabled = false;
+        bubble.SetActive(false);
     }
 }
