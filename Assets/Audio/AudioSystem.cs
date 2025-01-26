@@ -89,6 +89,7 @@ public class AudioSystem : MonoBehaviour
         int index = freeSources[freeSources.Count - 1];
         freeSources.RemoveAt(freeSources.Count - 1);
         AudioClip selectedPop = pops[Random.Range(0, 2)];
+        popSources[index].pitch = Random.Range(0.75f, 1.25f);
         popSources[index].PlayOneShot(selectedPop);
         playingList.Add(index);
     }
