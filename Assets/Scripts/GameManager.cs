@@ -142,8 +142,11 @@ public class GameManager : MonoBehaviour
     public float mouseBurnRadius = 0.05f;
     public float mouseBurnDamage = 1;
     public float mouseBurnInterval = 0.2f;
+    public int mouseBurnTargetCount = 1;
     public bool burnReady = true;
     float mouseBurnTime = 0.0f;
+
+    public SpriteRenderer skyRenderer;
 
     Collider2D[] results = new Collider2D[50];
     void updateMouseBurn()
@@ -164,7 +167,7 @@ public class GameManager : MonoBehaviour
                     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mouseWorldPosition.z = 0f; // Set z to 0 for 2D games
                     int numColliders = Physics2D.OverlapCircleNonAlloc(mouseWorldPosition, mouseBurnRadius, results);
-                    for(int i = 0; i < numColliders; i += 1)
+                    for(int i = 0; i < numColliders && i < mouseBurnTargetCount; i += 1)
                     {
                         DamageBubble(results[i].gameObject, true);
 

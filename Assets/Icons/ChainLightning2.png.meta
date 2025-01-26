@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e54fa2ba3add8f640939e574b2dd7b15
+guid: f4f18ac65e01ad64eb2af2179b102393
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2399294412241555197
-    second: OrbittingDarts_0
-  - first:
-      213: 8286821958666496390
-    second: OrbittingDarts_1
+      213: -7468412588846602964
+    second: ChainLightning2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrbittingDarts_0
+      name: ChainLightning2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 166
-        width: 384
-        height: 284
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfecc315e810c4120800000000000000
-      internalID: 2399294412241555197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OrbittingDarts_1
-      rect:
-        serializedVersion: 2
-        x: 105
         y: 0
-        width: 384
-        height: 284
+        width: 175
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 689293b7aa4b00370800000000000000
-      internalID: 8286821958666496390
+      spriteID: c252ebdd15eda5890800000000000000
+      internalID: -7468412588846602964
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      OrbittingDarts_0: 2399294412241555197
-      OrbittingDarts_1: 8286821958666496390
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
