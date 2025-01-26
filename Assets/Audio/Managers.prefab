@@ -48,11 +48,25 @@ MonoBehaviour:
   bubble1: {fileID: 960991715670354285, guid: de54f06b4e6bfb34fa53a468b7034ddd, type: 3}
   spawner: {fileID: 0}
   cursorTexture: {fileID: 0}
+  clickedCursorTexture: {fileID: 0}
+  burnCursorTexture: {fileID: 0}
   milestones:
-  - Score: 0
+  - Score: 5
     OnScoreTriggered:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 6883698324580387875}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ShowShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Score: 2
     OnScoreTriggered:
       m_PersistentCalls:
@@ -67,6 +81,27 @@ MonoBehaviour:
   spawnRate: 0.3
   currentPopper: 0
   _interval: 0.1
+  popperChainPrefab: {fileID: 0}
+  chainLightingSpeed: 20
+  comboText: {fileID: 0}
+  combosUnlocked: 0
+  comboMultiplier: 1
+  comboMultStepSize: 10
+  maxComboTimer: 0.2
+  curComboTimer: 0
+  upgradeManager: {fileID: 0}
+  mouseBurnRadius: 0.05
+  mouseBurnDamage: 1
+  mouseBurnInterval: 0.2
+  mouseBurnTargetCount: 1
+  burnReady: 1
+  skyRenderer: {fileID: 0}
+  hpPerBubble: 1
+  scorePerBubble: 1
+  popperChainChance: 0
+  popperChainMaxCount: 5
+  popperChainRadius: 1
+  popperChainInterval: 0.1
 --- !u!1 &4243157315503514932
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10136330538b91444bcf6568c3bf97f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePerBubble: 1
   scoreText: {fileID: 0}
 --- !u!1 &6660051503456479930
 GameObject:
