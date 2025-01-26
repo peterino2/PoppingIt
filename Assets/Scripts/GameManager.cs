@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
 
         if(clickCursorDelay > 0)
         {
@@ -162,6 +162,7 @@ public class GameManager : MonoBehaviour
             popperChain.update();
         }
 
+        updateRandomPopper();
         updateMouseBurn();
         {
             chainLightingProjectile.transform.position = Vector3.Lerp(chainLightingProjectile.transform.position, popperChain.position, 0.3f);
@@ -376,6 +377,17 @@ public class GameManager : MonoBehaviour
             randomPopperTime -= Time.deltaTime;
             if(randomPopperTime <= 0)
             {
+                bool spawned = false;
+                int i = 0;
+                while (!spawned && i < bubbles.Count)
+                {
+                    if (bubbles[i].gameObject.GetComponent<Renderer>().enabled) {
+                        DamageBubble(bubbles[i].gameObject, false);
+                        break;
+                    }
+                    i += 1;
+                }
+
                 randomPopperTime += 1.0f / randomPopperRate;
             }
         }
