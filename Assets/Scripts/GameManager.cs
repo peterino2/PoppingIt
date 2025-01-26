@@ -84,15 +84,32 @@ public class GameManager : MonoBehaviour
         ScoreManager = ScoreManager.get();
         ScoreManager.ResetScore();
         bubbles = new List<GameObject>(1000);
-        for (int i = 0; i < 1000; i++)
+
+        for (int i = 0; i < 100; i++)
         {
             bubbles.Add(Instantiate(bubble1));
             bubbles[i].GetComponent<Renderer>().enabled = false;
+            bubbles[i].SetActive(false);
+        }
+
+        for(int i = 1; i < 10; i++)
+        {
+            Invoke("CreateBubbles", i * 3);
         }
         
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
 
         milestones.Sort((ScoreTrigger lhs, ScoreTrigger rhs) => { return (int)(lhs.Score - rhs.Score); });
+    }
+
+    void CreateBubbles()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            bubbles.Add(Instantiate(bubble1));
+            bubbles[bubbles.Count - 1].GetComponent<Renderer>().enabled = false;
+            bubbles[bubbles.Count - 1].SetActive(false);
+        }
     }
 
     void updateInterval()
