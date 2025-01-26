@@ -152,7 +152,7 @@ public class AudioSystem : MonoBehaviour
             if(clipLoudness > 0.15 && flag == false)
             {
                 flag = true;
-                GameManager.Instance.ScoreManager.IncrementScore();
+                GameManager.Instance.ScoreManager.IncrementScore(GameManager.Instance.scorePerBubble);
             }
             if(clipLoudness < 0.15)
             {

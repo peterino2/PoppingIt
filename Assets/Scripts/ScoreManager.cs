@@ -23,9 +23,9 @@ public class ScoreManager : MonoBehaviour
         gStaticInstance = this;
     }
 
-    public void IncrementScore()
+    public void IncrementScore(double score)
     {
-        _currentScore += GameManager.Instance.scorePerBubble;
+        _currentScore += score;
         scoreText.text = "Score: " + _currentScore.ToString();
     }
 

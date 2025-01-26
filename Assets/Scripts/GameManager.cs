@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -56,6 +57,19 @@ public class GameManager : MonoBehaviour
     GameObject chainLightingProjectile;
     [SerializeField] float chainLightingSpeed = 20.0f;
 
+    [SerializeField] 
+    TMP_Text comboText;
+
+    int combo = 0;
+
+    public bool combosUnlocked = false;
+    public double comboMultiplier = 1.0f;
+    public int comboMultStepSize = 10;
+
+    double currentComboMultiplier = 1.0f;
+
+    public float maxComboTimer = 0.2f;
+    public float curComboTimer = 0.0f;
 
     public static GameManager Instance
 
@@ -80,6 +94,9 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        combosUnlocked = false;
+        comboMultiplier = 1.0f;
+        currentComboMultiplier = 1.0f;
         _time = 0f;
         ScoreManager = ScoreManager.get();
         ScoreManager.ResetScore();
@@ -154,6 +171,14 @@ public class GameManager : MonoBehaviour
         }
         updateInterval();
 
+        curComboTimer -= Time.deltaTime;
+        if(curComboTimer <= 0)
+        {
+            curComboTimer = 0;
+            combo = 0;
+            comboText.text = "";
+            currentComboMultiplier = 1.0f;
+        }
     }
 
     public float mouseBurnRadius = 0.05f;
@@ -209,7 +234,7 @@ public class GameManager : MonoBehaviour
 
         if(bubbles.Count == 0)
         {
-            for (int j = 0; j < 1000; j++)
+            for (int j = 0; j < 100; j++)
             {
                 bubbles.Add(Instantiate(bubble1));
                 bubbles[i].GetComponent<Renderer>().enabled = false;
@@ -261,7 +286,8 @@ public class GameManager : MonoBehaviour
             bub.takeDamage(currentDamage);
             if (bub.curHP <= 0)
             {
-                ScoreManager.IncrementScore();
+                IncrementCombo();
+                ScoreManager.IncrementScore(scorePerBubble * currentComboMultiplier);
                 AudioSystem.get().playPop();
                 //RemoveBubble(bubble);
                 bubble.GetComponent<CircleCollider2D>().enabled = false;
@@ -275,6 +301,25 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    void IncrementCombo()
+    {
+        if(!combosUnlocked) 
+        {
+            return; 
+        }
+
+        combo++;
+        currentComboMultiplier = comboMultiplier * (combo / comboMultStepSize);
+        if(currentComboMultiplier < 1.0)
+        {
+            currentComboMultiplier = 1.0;
+        }
+
+        comboText.text = "Chain: " + combo.ToString();
+        comboText.fontSize = 18 + combo / comboMultStepSize;
+        curComboTimer = maxComboTimer;
     }
 
     public void addToRemoveList(GameObject bubble) { 
