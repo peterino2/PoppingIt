@@ -196,6 +196,8 @@ GameObject:
   - component: {fileID: 343847715}
   - component: {fileID: 343847714}
   - component: {fileID: 343847713}
+  - component: {fileID: 343847717}
+  - component: {fileID: 343847716}
   m_Layer: 0
   m_Name: UpgradeList
   m_TagString: Untagged
@@ -269,6 +271,40 @@ MonoBehaviour:
   description: A simple Bubble Wand!
   cost: 5
   unlockThreshold: 1
+--- !u!114 &343847716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876994e027db7714b9bc702282eaaf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 2399294412241555197, guid: e54fa2ba3add8f640939e574b2dd7b15, type: 3}
+  upgradeName: Darts of war
+  description: Spinning darts deal damage in an area
+  cost: 100
+  unlockThreshold: 0
+--- !u!114 &343847717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1a61d9aef445948b22dbfbe97b75aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5007744267778832331, guid: 7cd9165e3ff88e640af21fca43db9119, type: 3}
+  upgradeName: Burning Finger
+  description: Hold to deal pop rapidly
+  cost: 40
+  unlockThreshold: 0
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,6 +1829,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: burnReady
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: spawnRate
       value: 0.3
       objectReference: {fileID: 0}
@@ -1801,12 +1841,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2800000, guid: 81048ca663dbf1f4bad4d620633d3d84, type: 3}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: mouseBurnRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: burnCursorTexture
       value: 
       objectReference: {fileID: 2800000, guid: f7b515365e0b71643ad145af257afc0b, type: 3}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
+      propertyPath: mouseBurnInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: popperChainChance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6883698324580387875, guid: f745c68d599958c4388ad2bb624e8659, type: 3}
       propertyPath: popperChainPrefab
@@ -1972,6 +2020,26 @@ PrefabInstance:
     - target: {fileID: 5303801043630414655, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
       propertyPath: m_Name
       value: UpgradeMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363633055194246750, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363633055194246750, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363633055194246750, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416170576876104996, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416170576876104996, guid: 61bad03338a89a64082709b4d12589a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

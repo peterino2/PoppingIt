@@ -137,7 +137,7 @@ public class UpgradeMenuManager : MonoBehaviour
 
         int col = index % maxColumns;
 
-        return new Vector2(col * prefabSize.x, row * prefabSize.y);
+        return new Vector2(col * prefabSize.x, -row * prefabSize.y);
     }
 
     void AnimateMenu()
