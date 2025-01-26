@@ -310,6 +310,8 @@ GameObject:
   - component: {fileID: 343847726}
   - component: {fileID: 343847727}
   - component: {fileID: 343847728}
+  - component: {fileID: 343847730}
+  - component: {fileID: 343847729}
   m_Layer: 0
   m_Name: UpgradeList
   m_TagString: Untagged
@@ -589,7 +591,41 @@ MonoBehaviour:
   upgradeName: Satans Butt
   description: the ultimate in bubble generation
   cost: 5000
-  unlockThreshold: 5000
+  unlockThreshold: 2000
+--- !u!114 &343847729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4857d7c11afd7b3488bc046ee98bd8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5556150181158091387, guid: 0a527f4faa8c09a4fb5d4e6c0c015c60, type: 3}
+  upgradeName: BubblinatorV2
+  description: the final upgrade to the bubblinator
+  cost: 1000
+  unlockThreshold: 2000
+--- !u!114 &343847730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343847711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4857d7c11afd7b3488bc046ee98bd8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5556150181158091387, guid: 0a527f4faa8c09a4fb5d4e6c0c015c60, type: 3}
+  upgradeName: BubblinatorV2
+  description: An upgrade to the bubblinator
+  cost: 500
+  unlockThreshold: 2000
 --- !u!1 &343934855
 GameObject:
   m_ObjectHideFlags: 0
