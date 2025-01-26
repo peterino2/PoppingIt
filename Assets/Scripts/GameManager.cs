@@ -344,9 +344,19 @@ public class GameManager : MonoBehaviour
     float passiveGenerator;
     
     // pops
-    float randomPopperInterval;
+    public float randomPopperRate = 0.0f;
+
+    float randomPopperTime = 0.0f;
     
     void updateRandomPopper()
     {
+        if(randomPopperRate > 0)
+        {
+            randomPopperTime -= Time.deltaTime;
+            if(randomPopperTime <= 0)
+            {
+                randomPopperTime += 1.0f / randomPopperRate;
+            }
+        }
     }
 }
