@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.4, y: -26.8}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 151.95142, y: -25.381695}
+  m_SizeDelta: {x: 235.1028, y: 47.1634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2006661277274041653
 CanvasRenderer:
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 136, y: -44.2}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 152.75, y: -43.13628}
+  m_SizeDelta: {x: 233.5, y: 47.8725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3603729489422157705
 CanvasRenderer:
@@ -367,6 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8827446367545563205}
   rect: {fileID: 2141634437172336027}
+  header: {fileID: 8146425664664144919}
+  description: {fileID: 3870955899511261518}
   menuManager: {fileID: 0}
   upgrade: {fileID: 0}
 --- !u!114 &3524045236003028141
@@ -409,7 +411,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 4711152702445711254}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
