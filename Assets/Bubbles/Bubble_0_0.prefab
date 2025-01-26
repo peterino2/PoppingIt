@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3005311254829495931}
   - component: {fileID: 8183895777202355203}
   - component: {fileID: 1292717637980318072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble_0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
